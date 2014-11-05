@@ -10,4 +10,12 @@ class MainController extends Controller
     {
         return $this->render('KulinariaMainBundle:Main:index.html.twig');
     }
+    
+    public function przycisk1Action() {
+        return $this->render('KulinariaMainBundle:Main:index2.html.twig');
+    }
+    
+    public function przycisk2Action() {
+        return $this->render('KulinariaMainBundle:Main:index3.html.twig');
+    }
 }

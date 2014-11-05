@@ -11,6 +11,7 @@ class __TwigTemplate_840ae10bcd7b87c7f251bc8b28c32f3d6b5d5fd9ed6d3a93cb01a7d4651
 
         $this->blocks = array(
             'mojBlok' => array($this, 'block_mojBlok'),
+            'wynik' => array($this, 'block_wynik'),
         );
     }
 
@@ -28,8 +29,13 @@ class __TwigTemplate_840ae10bcd7b87c7f251bc8b28c32f3d6b5d5fd9ed6d3a93cb01a7d4651
     public function block_mojBlok($context, array $blocks = array())
     {
         // line 4
-        echo "    Hello world!
-";
+        echo "    ";
+        $this->displayBlock('wynik', $context, $blocks);
+    }
+
+    public function block_wynik($context, array $blocks = array())
+    {
+        echo "Hello fantastic world!";
     }
 
     public function getTemplateName()
@@ -44,6 +50,6 @@ class __TwigTemplate_840ae10bcd7b87c7f251bc8b28c32f3d6b5d5fd9ed6d3a93cb01a7d4651
 
     public function getDebugInfo()
     {
-        return array (  31 => 4,  28 => 3,);
+        return array (  32 => 4,  29 => 3,);
     }
 }

@@ -1,5 +1,13 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
-    <p> {% block mojBlok %}{% endblock %} </p>
+    <div id="pierwszy">
+        <a href="{{ path('przycisk1h')}}">Przycisk 1</a>
+        <a href="{{ path('przycisk2h')}}">Przycisk 2</a>
+        <a href="index.ahml">Przycisk 3</a>
+    </div>
+    <br />
+    <div id="drugi">
+        <p> {% block wynik %}{% endblock %} </p>
+    </div>
 {% endblock %}

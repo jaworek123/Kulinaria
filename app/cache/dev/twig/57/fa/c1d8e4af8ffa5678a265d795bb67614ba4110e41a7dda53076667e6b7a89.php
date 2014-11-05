@@ -11,7 +11,7 @@ class __TwigTemplate_57fac1d8e4af8ffa5678a265d795bb67614ba4110e41a7dda53076667e6
 
         $this->blocks = array(
             'body' => array($this, 'block_body'),
-            'mojBlok' => array($this, 'block_mojBlok'),
+            'wynik' => array($this, 'block_wynik'),
         );
     }
 
@@ -29,13 +29,28 @@ class __TwigTemplate_57fac1d8e4af8ffa5678a265d795bb67614ba4110e41a7dda53076667e6
     public function block_body($context, array $blocks = array())
     {
         // line 4
-        echo "    <p> ";
-        $this->displayBlock('mojBlok', $context, $blocks);
+        echo "    <div id=\"pierwszy\">
+        <a href=\"";
+        // line 5
+        echo $this->env->getExtension('routing')->getPath("przycisk1h");
+        echo "\">Przycisk 1</a>
+        <a href=\"";
+        // line 6
+        echo $this->env->getExtension('routing')->getPath("przycisk2h");
+        echo "\">Przycisk 2</a>
+        <a href=\"index.ahml\">Przycisk 3</a>
+    </div>
+    <br />
+    <div id=\"drugi\">
+        <p> ";
+        // line 11
+        $this->displayBlock('wynik', $context, $blocks);
         echo " </p>
+    </div>
 ";
     }
 
-    public function block_mojBlok($context, array $blocks = array())
+    public function block_wynik($context, array $blocks = array())
     {
     }
 
@@ -51,6 +66,6 @@ class __TwigTemplate_57fac1d8e4af8ffa5678a265d795bb67614ba4110e41a7dda53076667e6
 
     public function getDebugInfo()
     {
-        return array (  32 => 4,  29 => 3,);
+        return array (  47 => 11,  39 => 6,  35 => 5,  32 => 4,  29 => 3,);
     }
 }

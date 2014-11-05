@@ -1,3 +1,11 @@
 kulinaria_main_homepage:
     path:     /
     defaults: { _controller: KulinariaMainBundle:Main:index }
+
+przycisk1h:
+    path:   /przycisk1/
+    defaults: { _controller: KulinariaMainBundle:Main:przycisk1 }
+    
+przycisk2h:
+    path:   /przycisk2/
+    defaults: { _controller: KulinariaMainBundle:Main:przycisk2 }
