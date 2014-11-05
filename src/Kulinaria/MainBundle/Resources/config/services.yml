@@ -1,0 +1,4 @@
+services:
+#    kulinaria_main.example:
+#        class: Kulinaria\MainBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

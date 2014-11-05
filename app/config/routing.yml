@@ -1,0 +1,7 @@
+kulinaria_main:
+    resource: "@KulinariaMainBundle/Resources/config/routing.yml"
+    prefix:   /
+ 
+_index:
+    pattern: /
+    defaults: { _controller: KulinariaMainBundle:Main:index }
