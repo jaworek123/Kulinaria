@@ -10,8 +10,7 @@ class __TwigTemplate_840ae10bcd7b87c7f251bc8b28c32f3d6b5d5fd9ed6d3a93cb01a7d4651
         $this->parent = $this->env->loadTemplate("KulinariaMainBundle::layout.html.twig");
 
         $this->blocks = array(
-            'mojBlok' => array($this, 'block_mojBlok'),
-            'wynik' => array($this, 'block_wynik'),
+            'myBody' => array($this, 'block_myBody'),
         );
     }
 
@@ -26,16 +25,9 @@ class __TwigTemplate_840ae10bcd7b87c7f251bc8b28c32f3d6b5d5fd9ed6d3a93cb01a7d4651
     }
 
     // line 3
-    public function block_mojBlok($context, array $blocks = array())
+    public function block_myBody($context, array $blocks = array())
     {
-        // line 4
-        echo "    ";
-        $this->displayBlock('wynik', $context, $blocks);
-    }
-
-    public function block_wynik($context, array $blocks = array())
-    {
-        echo "Hello fantastic world!";
+        echo " Siema wszystkim. Jestem Tigron! :D ";
     }
 
     public function getTemplateName()
@@ -50,6 +42,6 @@ class __TwigTemplate_840ae10bcd7b87c7f251bc8b28c32f3d6b5d5fd9ed6d3a93cb01a7d4651
 
     public function getDebugInfo()
     {
-        return array (  32 => 4,  29 => 3,);
+        return array (  28 => 3,);
     }
 }
