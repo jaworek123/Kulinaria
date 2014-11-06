@@ -131,27 +131,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Kulinaria\\MainBundle\\Controller\\MainController::indexAction',  '_route' => 'kulinaria_main_homepage',);
         }
 
-        if (0 === strpos($pathinfo, '/przycisk')) {
-            // przycisk1h
-            if (rtrim($pathinfo, '/') === '/przycisk1') {
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'przycisk1h');
-                }
-
-                return array (  '_controller' => 'Kulinaria\\MainBundle\\Controller\\MainController::przycisk1Action',  '_route' => 'przycisk1h',);
-            }
-
-            // przycisk2h
-            if (rtrim($pathinfo, '/') === '/przycisk2') {
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'przycisk2h');
-                }
-
-                return array (  '_controller' => 'Kulinaria\\MainBundle\\Controller\\MainController::przycisk2Action',  '_route' => 'przycisk2h',);
-            }
-
-        }
-
         // _index
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
