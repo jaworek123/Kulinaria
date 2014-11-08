@@ -131,13 +131,14 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Kulinaria\\MainBundle\\Controller\\MainController::indexAction',  '_route' => 'kulinaria_main_homepage',);
         }
 
-        // _index
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', '_index');
-            }
+        // cook_book
+        if ($pathinfo === '/cookBook') {
+            return array (  '_controller' => 'Kulinaria\\MainBundle\\Controller\\MainController::cookBookAction',  '_route' => 'cook_book',);
+        }
 
-            return array (  '_controller' => 'Kulinaria\\MainBundle\\Controller\\MainController::indexAction',  '_route' => '_index',);
+        // find_recipt
+        if ($pathinfo === '/findRecipt') {
+            return array (  '_controller' => 'Kulinaria\\MainBundle\\Controller\\MainController::findReciptAction',  '_route' => 'find_recipt',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

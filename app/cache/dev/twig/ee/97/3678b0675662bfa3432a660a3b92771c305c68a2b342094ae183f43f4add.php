@@ -33,24 +33,25 @@ class __TwigTemplate_ee973678b0675662bfa3432a660a3b92771c305c68a2b342094ae183f43
         // line 10
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
+        
         ";
-        // line 11
+        // line 12
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 18
+        // line 19
         echo "        
         <link rel=\"icon\" type=\"image/x-icon\" href=\"";
-        // line 19
+        // line 20
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("favicon.ico"), "html", null, true);
         echo "\" />
     </head>
     <body>
         ";
-        // line 22
-        $this->displayBlock('body', $context, $blocks);
         // line 23
+        $this->displayBlock('body', $context, $blocks);
+        // line 24
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 37
+        // line 38
         echo "    </body>
 </html>
 ";
@@ -62,42 +63,42 @@ class __TwigTemplate_ee973678b0675662bfa3432a660a3b92771c305c68a2b342094ae183f43
         echo "Welcome!";
     }
 
-    // line 11
+    // line 12
     public function block_stylesheets($context, array $blocks = array())
     {
-        // line 12
+        // line 13
         echo "            <!-- Bootstrap Core CSS -->
             <link href=\" ";
-        // line 13
+        // line 14
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/KulinariaMainBundle/css/bootstrap.min.css"), "html", null, true);
         echo " \" rel=\"stylesheet\">
 
             <!-- Custom CSS -->
             <link href=\" ";
-        // line 16
+        // line 17
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/KulinariaMainBundle/css/modern-business.css"), "html", null, true);
         echo " \" rel=\"stylesheet\">
         ";
     }
 
-    // line 22
+    // line 23
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 23
+    // line 24
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 24
+        // line 25
         echo "            <!-- jQuery -->
             <script src=\" ";
-        // line 25
+        // line 26
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/KulinariaMainBundle/js/jquery.js"), "html", null, true);
         echo " \"></script>
 
             <!-- Bootstrap Core JavaScript -->
             <script src=\" ";
-        // line 28
+        // line 29
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/KulinariaMainBundle/js/bootstrap.min.js"), "html", null, true);
         echo " \"></script>
 
@@ -122,6 +123,6 @@ class __TwigTemplate_ee973678b0675662bfa3432a660a3b92771c305c68a2b342094ae183f43
 
     public function getDebugInfo()
     {
-        return array (  101 => 28,  95 => 25,  92 => 24,  89 => 23,  84 => 22,  78 => 16,  72 => 13,  69 => 12,  66 => 11,  60 => 10,  54 => 37,  51 => 23,  49 => 22,  43 => 19,  40 => 18,  38 => 11,  34 => 10,  23 => 1,);
+        return array (  102 => 29,  96 => 26,  93 => 25,  90 => 24,  85 => 23,  79 => 17,  73 => 14,  70 => 13,  67 => 12,  61 => 10,  55 => 38,  52 => 24,  50 => 23,  44 => 20,  41 => 19,  39 => 12,  34 => 10,  23 => 1,);
     }
 }

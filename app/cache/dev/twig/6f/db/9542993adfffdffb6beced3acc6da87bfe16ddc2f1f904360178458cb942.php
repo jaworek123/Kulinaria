@@ -27,7 +27,9 @@ class __TwigTemplate_6fdb9542993adfffdffb6beced3acc6da87bfe16ddc2f1f904360178458
     // line 3
     public function block_myBody($context, array $blocks = array())
     {
-        echo " Siema wszystkim. Jestem Tigron! :D ";
+        // line 4
+        echo "    Strona glowna projektu.
+";
     }
 
     public function getTemplateName()
@@ -42,6 +44,6 @@ class __TwigTemplate_6fdb9542993adfffdffb6beced3acc6da87bfe16ddc2f1f904360178458
 
     public function getDebugInfo()
     {
-        return array (  28 => 3,);
+        return array (  31 => 4,  28 => 3,);
     }
 }

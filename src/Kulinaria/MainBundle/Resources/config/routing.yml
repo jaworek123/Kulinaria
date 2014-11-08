@@ -1,3 +1,11 @@
 kulinaria_main_homepage:
     path:     /
     defaults: { _controller: KulinariaMainBundle:Main:index }
+
+cook_book:
+    path: /cookBook
+    defaults: { _controller: KulinariaMainBundle:Main:cookBook }
+
+find_recipt:
+    path: /findRecipt
+    defaults: { _controller: KulinariaMainBundle:Main:findRecipt }
