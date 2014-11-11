@@ -25,3 +25,7 @@ Kulinaria\MainBundle\Entity\User:
             type: string
             length: 255
     lifecycleCallbacks: {  }
+    oneToMany:
+        recipts:
+            targetEntity: Recipt
+            mappedBy: user

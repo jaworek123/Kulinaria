@@ -3,6 +3,7 @@
 namespace Kulinaria\MainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * User
@@ -38,7 +39,21 @@ class User
      * @var string
      */
     private $password;
-
+    
+    /**
+     *
+     * @var array
+     */
+    protected $recipts;
+    
+    /**
+     * construct relation array of recipts
+     * 
+     * @return ArrayCollection
+     */
+    public function __construct() {
+        $this->recipts = new ArrayCollection();
+    }
 
     /**
      * Get id

@@ -10,7 +10,7 @@ class __TwigTemplate_6fdb9542993adfffdffb6beced3acc6da87bfe16ddc2f1f904360178458
         $this->parent = $this->env->loadTemplate("KulinariaMainBundle::layout.html.twig");
 
         $this->blocks = array(
-            'myBody' => array($this, 'block_myBody'),
+            'content' => array($this, 'block_content'),
         );
     }
 
@@ -25,7 +25,7 @@ class __TwigTemplate_6fdb9542993adfffdffb6beced3acc6da87bfe16ddc2f1f904360178458
     }
 
     // line 3
-    public function block_myBody($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
         echo "    Strona glowna projektu.

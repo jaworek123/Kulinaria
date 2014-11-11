@@ -10,7 +10,7 @@ class __TwigTemplate_56e23253edb18e10e4cc17794e7c69648524e642ce92759c6501ad254ad
         $this->parent = $this->env->loadTemplate("KulinariaMainBundle::layout.html.twig");
 
         $this->blocks = array(
-            'myBody' => array($this, 'block_myBody'),
+            'content' => array($this, 'block_content'),
         );
     }
 
@@ -25,10 +25,10 @@ class __TwigTemplate_56e23253edb18e10e4cc17794e7c69648524e642ce92759c6501ad254ad
     }
 
     // line 3
-    public function block_myBody($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
-        echo "    
+        echo "    Miejsce na szukanie przepisow.
 ";
     }
 

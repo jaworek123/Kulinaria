@@ -1,0 +1,29 @@
+Kulinaria\MainBundle\Entity\Recipt:
+    type: entity
+    table: null
+    repositoryClass: Kulinaria\MainBundle\Entity\ReciptRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        ingredients:
+            type: text
+        image:
+            type: blob
+        description:
+            type: text
+    lifecycleCallbacks: {  }
+    manyToOne:
+        user:
+            targetEntity: User
+            inversedBy: recipts
+            joinColumn:
+                name: user_id
+                referencedColumnName: id
+            

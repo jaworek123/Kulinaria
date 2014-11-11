@@ -11,7 +11,7 @@ class __TwigTemplate_993af58df3aecdd9360bfe2eefa1627622eec32bfdfa267ea3997425333
 
         $this->blocks = array(
             'body' => array($this, 'block_body'),
-            'myBody' => array($this, 'block_myBody'),
+            'content' => array($this, 'block_content'),
         );
     }
 
@@ -152,14 +152,14 @@ class __TwigTemplate_993af58df3aecdd9360bfe2eefa1627622eec32bfdfa267ea3997425333
     <div id =\"myBody\">
         ";
         // line 116
-        $this->displayBlock('myBody', $context, $blocks);
+        $this->displayBlock('content', $context, $blocks);
         // line 117
         echo "    </div>
 ";
     }
 
     // line 116
-    public function block_myBody($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         echo " ";
     }
