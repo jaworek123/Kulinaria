@@ -1,7 +1,7 @@
 <?php
 
-/* KulinariaMainBundle:Main:cookbook.html.twig */
-class __TwigTemplate_6644277eec6c9d55829afa2fbc5d20d1544cd4d8a012287c5f7f4776a0d7478a extends Twig_Template
+/* KulinariaMainBundle:CookBook:cookbook.html.twig */
+class __TwigTemplate_485ef2f40bd18f25f3a9a2dc0d484734ff94cc3330858c54c2c1718f142d5ffd extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -141,32 +141,99 @@ class __TwigTemplate_6644277eec6c9d55829afa2fbc5d20d1544cd4d8a012287c5f7f4776a0d
             <div class=\"col-lg-12\">
                 <ul class=\"pagination\">
                     <li>
-                        <a href=\"#\">&laquo;</a>
+                        <a href=\"";
+        // line 117
+        echo $this->env->getExtension('routing')->getPath("cook_book");
+        echo "\">&laquo;</a>
                     </li>
-                    <li class=\"active\">
-                        <a href=\"#\">1</a>
-                    </li>
-                    <li>
-                        <a href=\"#\">2</a>
-                    </li>
-                    <li>
-                        <a href=\"#\">3</a>
-                    </li>
-                    <li>
-                        <a href=\"#\">4</a>
-                    </li>
-                    <li>
-                        <a href=\"#\">5</a>
-                    </li> 
-                    <li>
+                    ";
+        // line 119
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable(range(((isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")) - 2), ((isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")) + 2)));
+        $context['_iterated'] = false;
+        foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
+            if (((isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")) > 2)) {
+                // line 120
+                echo "                        ";
+                if (($context["i"] == (isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")))) {
+                    // line 121
+                    echo "                            <li class=\"active\">
+                                <a href=\" ";
+                    // line 122
+                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cook_book", array("page" => $context["i"])), "html", null, true);
+                    echo " \">";
+                    echo twig_escape_filter($this->env, $context["i"], "html", null, true);
+                    echo "</a>
+                            </li>
+                        ";
+                } else {
+                    // line 125
+                    echo "                            <li>
+                                <a href=\"";
+                    // line 126
+                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cook_book", array("page" => $context["i"])), "html", null, true);
+                    echo "\">";
+                    echo twig_escape_filter($this->env, $context["i"], "html", null, true);
+                    echo "</a>
+                            </li>
+                        ";
+                }
+                // line 129
+                echo "                    ";
+                $context['_iterated'] = true;
+            }
+        }
+        if (!$context['_iterated']) {
+            // line 130
+            echo "                        ";
+            $context['_parent'] = (array) $context;
+            $context['_seq'] = twig_ensure_traversable(range(1, 5));
+            foreach ($context['_seq'] as $context["_key"] => $context["j"]) {
+                // line 131
+                echo "                            ";
+                if (($context["j"] == (isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")))) {
+                    // line 132
+                    echo "                                <li class=\"active\">
+                                   <a href=\"";
+                    // line 133
+                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cook_book", array("page" => $context["j"])), "html", null, true);
+                    echo "\">";
+                    echo twig_escape_filter($this->env, $context["j"], "html", null, true);
+                    echo "</a>
+                                </li>
+                            ";
+                } else {
+                    // line 136
+                    echo "                                <li>
+                                    <a href=\"";
+                    // line 137
+                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cook_book", array("page" => $context["j"])), "html", null, true);
+                    echo "\">";
+                    echo twig_escape_filter($this->env, $context["j"], "html", null, true);
+                    echo "</a>
+                                </li>
+                            ";
+                }
+                // line 140
+                echo "                        ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['j'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 141
+            echo "                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 142
+        echo "                    <li>
                         <a href=\"#\">&raquo;</a>
                     </li>
                 </ul>
             </div>
         </div>
         <!-- /.row -->
-
-        <hr>
 
         <!-- Footer -->
         <footer>
@@ -183,7 +250,7 @@ class __TwigTemplate_6644277eec6c9d55829afa2fbc5d20d1544cd4d8a012287c5f7f4776a0d
 
     public function getTemplateName()
     {
-        return "KulinariaMainBundle:Main:cookbook.html.twig";
+        return "KulinariaMainBundle:CookBook:cookbook.html.twig";
     }
 
     public function isTraitable()
@@ -193,6 +260,6 @@ class __TwigTemplate_6644277eec6c9d55829afa2fbc5d20d1544cd4d8a012287c5f7f4776a0d
 
     public function getDebugInfo()
     {
-        return array (  31 => 4,  28 => 3,);
+        return array (  230 => 142,  224 => 141,  218 => 140,  210 => 137,  207 => 136,  199 => 133,  196 => 132,  193 => 131,  188 => 130,  182 => 129,  174 => 126,  171 => 125,  163 => 122,  160 => 121,  157 => 120,  151 => 119,  146 => 117,  31 => 4,  28 => 3,);
     }
 }
