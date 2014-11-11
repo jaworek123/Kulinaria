@@ -7,6 +7,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class CookBookController extends Controller
 {
     public function indexAction($page) {
-        return $this->render('KulinariaMainBundle:CookBook:cookbook.html.twig', array('page' => $page));
+        $maxPage = 7;
+        return $this->render('KulinariaMainBundle:CookBook:cookbook.html.twig',
+                array('page' => $page, 'maxPage' => $maxPage));
     }
 }

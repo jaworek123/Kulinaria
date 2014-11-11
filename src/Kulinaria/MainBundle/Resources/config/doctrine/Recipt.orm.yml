@@ -26,4 +26,3 @@ Kulinaria\MainBundle\Entity\Recipt:
             joinColumn:
                 name: user_id
                 referencedColumnName: id
-            

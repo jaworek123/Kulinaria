@@ -11,7 +11,7 @@ class __TwigTemplate_57fac1d8e4af8ffa5678a265d795bb67614ba4110e41a7dda53076667e6
 
         $this->blocks = array(
             'body' => array($this, 'block_body'),
-            'myBody' => array($this, 'block_myBody'),
+            'content' => array($this, 'block_content'),
         );
     }
 
@@ -40,19 +40,28 @@ class __TwigTemplate_57fac1d8e4af8ffa5678a265d795bb67614ba4110e41a7dda53076667e6
                     <span class=\"icon-bar\"></span>
                     <span class=\"icon-bar\"></span>
                 </button>
-                <a class=\"navbar-brand\" href=\"index..html\">Strona glowna</a>
+                <a class=\"navbar-brand\" href=\" ";
+        // line 15
+        echo $this->env->getExtension('routing')->getPath("kulinaria_main_homepage");
+        echo " \">Strona glowna</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
                 <ul class=\"nav navbar-nav navbar-right\">
                     <li>
-                        <a href=\"about.html\">About</a>
+                        <a href=\" ";
+        // line 21
+        echo $this->env->getExtension('routing')->getPath("cook_book");
+        echo " \">Ksiazka kucharska</a>
                     </li>
                     <li>
-                        <a href=\"services.html\">Services</a>
+                        <a href=\" ";
+        // line 24
+        echo $this->env->getExtension('routing')->getPath("find_recipt");
+        echo " \">Wyszukaj</a>
                     </li>
                     <li>
-                        <a href=\"contact.html\">Contact</a>
+                        <a href=\"contact.html\">Kontakt</a>
                     </li>
                     <li class=\"dropdown\">
                         <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Portfolio <b class=\"caret\"></b></a>
@@ -75,38 +84,24 @@ class __TwigTemplate_57fac1d8e4af8ffa5678a265d795bb67614ba4110e41a7dda53076667e6
                         </ul>
                     </li>
                     <li class=\"dropdown\">
-                        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Blog <b class=\"caret\"></b></a>
+                        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Ustawienia <b class=\"caret\"></b></a>
                         <ul class=\"dropdown-menu\">
                             <li>
-                                <a href=\"blog-home-1.html\">Blog Home 1</a>
+                                <a href=\"full-width.html\">Konto</a>
                             </li>
                             <li>
-                                <a href=\"blog-home-2.html\">Blog Home 2</a>
+                                <a href=\"sidebar.html\">Twoje przepisy</a>
                             </li>
                             <li>
-                                <a href=\"blog-post.html\">Blog Post</a>
+                                <a href=\"404.html\">Pomoc</a>
+                            </li>
+                            <li>
+                                <a href=\"pricing.html\">Wyloguj</a>
                             </li>
                         </ul>
                     </li>
-                    <li class=\"dropdown\">
-                        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Other Pages <b class=\"caret\"></b></a>
-                        <ul class=\"dropdown-menu\">
-                            <li>
-                                <a href=\"full-width.html\">Full Width Page</a>
-                            </li>
-                            <li>
-                                <a href=\"sidebar.html\">Sidebar Page</a>
-                            </li>
-                            <li>
-                                <a href=\"faq.html\">FAQ</a>
-                            </li>
-                            <li>
-                                <a href=\"404.html\">404</a>
-                            </li>
-                            <li>
-                                <a href=\"pricing.html\">Pricing Table</a>
-                            </li>
-                        </ul>
+                    <li>
+                        <a href=\"logout.html\">Zaloguj</a>
                     </li>
                 </ul>
             </div>
@@ -156,17 +151,16 @@ class __TwigTemplate_57fac1d8e4af8ffa5678a265d795bb67614ba4110e41a7dda53076667e6
     </header>
     <div id =\"myBody\">
         ";
-        // line 130
-        $this->displayBlock('myBody', $context, $blocks);
-        // line 131
+        // line 116
+        $this->displayBlock('content', $context, $blocks);
+        // line 117
         echo "    </div>
 ";
     }
 
-    // line 130
-    public function block_myBody($context, array $blocks = array())
+    // line 116
+    public function block_content($context, array $blocks = array())
     {
-        echo " ";
     }
 
     public function getTemplateName()
@@ -181,6 +175,6 @@ class __TwigTemplate_57fac1d8e4af8ffa5678a265d795bb67614ba4110e41a7dda53076667e6
 
     public function getDebugInfo()
     {
-        return array (  167 => 130,  162 => 131,  160 => 130,  32 => 4,  29 => 3,);
+        return array (  162 => 116,  157 => 117,  155 => 116,  60 => 24,  54 => 21,  45 => 15,  32 => 4,  29 => 3,);
     }
 }

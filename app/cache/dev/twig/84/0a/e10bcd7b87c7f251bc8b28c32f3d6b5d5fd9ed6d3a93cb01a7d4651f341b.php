@@ -10,7 +10,7 @@ class __TwigTemplate_840ae10bcd7b87c7f251bc8b28c32f3d6b5d5fd9ed6d3a93cb01a7d4651
         $this->parent = $this->env->loadTemplate("KulinariaMainBundle::layout.html.twig");
 
         $this->blocks = array(
-            'myBody' => array($this, 'block_myBody'),
+            'content' => array($this, 'block_content'),
         );
     }
 
@@ -25,9 +25,11 @@ class __TwigTemplate_840ae10bcd7b87c7f251bc8b28c32f3d6b5d5fd9ed6d3a93cb01a7d4651
     }
 
     // line 3
-    public function block_myBody($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
-        echo " Siema wszystkim. Jestem Tigron! :D ";
+        // line 4
+        echo "    Strona glowna projektu.
+";
     }
 
     public function getTemplateName()
@@ -42,6 +44,6 @@ class __TwigTemplate_840ae10bcd7b87c7f251bc8b28c32f3d6b5d5fd9ed6d3a93cb01a7d4651
 
     public function getDebugInfo()
     {
-        return array (  28 => 3,);
+        return array (  31 => 4,  28 => 3,);
     }
 }
