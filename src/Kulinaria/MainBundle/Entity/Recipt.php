@@ -22,7 +22,7 @@ class Recipt
     /**
      * @var string
      */
-    private $ingredients;
+    private $description;
 
     /**
      * @var string
@@ -30,13 +30,13 @@ class Recipt
     private $image;
 
     /**
-     * @var string
+     * @var integer
      */
-    private $description;
-
+    private $views;
+    
     /**
      *
-     * @var user
+     * @var User
      */
     protected $user;
     
@@ -74,26 +74,26 @@ class Recipt
     }
 
     /**
-     * Set ingredients
+     * Set description
      *
-     * @param string $ingredients
+     * @param string $description
      * @return Recipt
      */
-    public function setIngredients($ingredients)
+    public function setDescription($description)
     {
-        $this->ingredients = $ingredients;
+        $this->description = $description;
 
         return $this;
     }
 
     /**
-     * Get ingredients
+     * Get description
      *
      * @return string 
      */
-    public function getIngredients()
+    public function getDescription()
     {
-        return $this->ingredients;
+        return $this->description;
     }
 
     /**
@@ -120,35 +120,35 @@ class Recipt
     }
 
     /**
-     * Set description
+     * Set views
      *
-     * @param string $description
+     * @param integer $views
      * @return Recipt
      */
-    public function setDescription($description)
+    public function setViews($views)
     {
-        $this->description = $description;
+        $this->views = $views;
 
         return $this;
     }
 
     /**
-     * Get description
+     * Get views
      *
-     * @return string 
+     * @return integer 
      */
-    public function getDescription()
+    public function getViews()
     {
-        return $this->description;
+        return $this->views;
     }
-    
+
     /**
-     * Set description
+     * Set user
      *
-     * @param User $user
+     * @param \Kulinaria\MainBundle\Entity\User $user
      * @return Recipt
      */
-    public function setUser($user)
+    public function setUser(\Kulinaria\MainBundle\Entity\User $user = null)
     {
         $this->user = $user;
 
@@ -158,7 +158,7 @@ class Recipt
     /**
      * Get user
      *
-     * @return user
+     * @return \Kulinaria\MainBundle\Entity\User 
      */
     public function getUser()
     {

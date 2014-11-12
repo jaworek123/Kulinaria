@@ -12,17 +12,17 @@ Kulinaria\MainBundle\Entity\Recipt:
         name:
             type: string
             length: 255
-        ingredients:
+        description:
             type: text
         image:
             type: blob
-        description:
-            type: text
+        views:
+            type: integer
     lifecycleCallbacks: {  }
     manyToOne:
         user:
             targetEntity: User
-            inversedBy: recipts
+            ieversedBy: recipts
             joinColumn:
                 name: user_id
                 referencedColumnName: id

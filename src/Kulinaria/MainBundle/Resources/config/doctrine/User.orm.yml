@@ -9,7 +9,10 @@ Kulinaria\MainBundle\Entity\User:
             generator:
                 strategy: AUTO
     fields:
-        username:
+        nickname:
+            type: string
+            length: 255
+        password:
             type: string
             length: 255
         name:
@@ -19,9 +22,6 @@ Kulinaria\MainBundle\Entity\User:
             type: string
             length: 255
         email:
-            type: string
-            length: 255
-        password:
             type: string
             length: 255
     lifecycleCallbacks: {  }

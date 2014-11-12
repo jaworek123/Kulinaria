@@ -2,7 +2,6 @@
 
 namespace Kulinaria\MainBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
@@ -18,7 +17,12 @@ class User
     /**
      * @var string
      */
-    private $username;
+    private $nickname;
+
+    /**
+     * @var string
+     */
+    private $password;
 
     /**
      * @var string
@@ -36,21 +40,11 @@ class User
     private $email;
 
     /**
-     * @var string
-     */
-    private $password;
-    
-    /**
      *
-     * @var array
+     * @var ArrayCollection
      */
     protected $recipts;
     
-    /**
-     * construct relation array of recipts
-     * 
-     * @return ArrayCollection
-     */
     public function __construct() {
         $this->recipts = new ArrayCollection();
     }
@@ -66,26 +60,49 @@ class User
     }
 
     /**
-     * Set username
+     * Set nickname
      *
-     * @param string $username
+     * @param string $nickname
      * @return User
      */
-    public function setUsername($username)
+    public function setNickname($nickname)
     {
-        $this->username = $username;
+        $this->nickname = $nickname;
 
         return $this;
     }
 
     /**
-     * Get username
+     * Get nickname
      *
      * @return string 
      */
-    public function getUsername()
+    public function getNickname()
     {
-        return $this->username;
+        return $this->nickname;
+    }
+
+    /**
+     * Set password
+     *
+     * @param string $password
+     * @return User
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Get password
+     *
+     * @return string 
+     */
+    public function getPassword()
+    {
+        return $this->password;
     }
 
     /**
@@ -158,25 +175,35 @@ class User
     }
 
     /**
-     * Set password
+     * Add recipts
      *
-     * @param string $password
+     * @param \Kulinaria\MainBundle\Entity\Recipt $recipts
      * @return User
      */
-    public function setPassword($password)
+    public function addRecipt(\Kulinaria\MainBundle\Entity\Recipt $recipts)
     {
-        $this->password = $password;
+        $this->recipts[] = $recipts;
 
         return $this;
     }
 
     /**
-     * Get password
+     * Remove recipts
      *
-     * @return string 
+     * @param \Kulinaria\MainBundle\Entity\Recipt $recipts
      */
-    public function getPassword()
+    public function removeRecipt(\Kulinaria\MainBundle\Entity\Recipt $recipts)
     {
-        return $this->password;
+        $this->recipts->removeElement($recipts);
+    }
+
+    /**
+     * Get recipts
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getRecipts()
+    {
+        return $this->recipts;
     }
 }
