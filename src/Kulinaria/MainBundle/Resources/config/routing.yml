@@ -1,4 +1,4 @@
-kulinaria_main_homepage:
+homepage:
     path:     /
     defaults: { _controller: KulinariaMainBundle:Main:index }
 

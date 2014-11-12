@@ -17,6 +17,7 @@
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="KulinariaMainBundle">Kulinaria\MainBundle\KulinariaMainBundle</parameter>
+      <parameter key="KulinariaUserBundle">Kulinaria\UserBundle\KulinariaUserBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
       <parameter key="SensioGeneratorBundle">Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle</parameter>
@@ -2361,6 +2362,7 @@
           <call method="setEntityNamespaces">
             <argument type="collection">
               <argument key="KulinariaMainBundle">Kulinaria\MainBundle\Entity</argument>
+              <argument key="KulinariaUserBundle">Kulinaria\UserBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -2398,6 +2400,7 @@
                     <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
                       <argument type="collection">
                         <argument key="D:\XAMPP\htdocs\Kulinaria\src\Kulinaria\MainBundle\Resources\config\doctrine">Kulinaria\MainBundle\Entity</argument>
+                        <argument key="D:\XAMPP\htdocs\Kulinaria\src\Kulinaria\UserBundle\Resources\config\Doctrine">Kulinaria\UserBundle\Entity</argument>
                       </argument>
                       <call method="setGlobalBasename">
                         <argument>mapping</argument>
@@ -2405,6 +2408,20 @@
                     </service>
                   </argument>
                   <argument>Kulinaria\MainBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
+                      <argument type="collection">
+                        <argument key="D:\XAMPP\htdocs\Kulinaria\src\Kulinaria\MainBundle\Resources\config\doctrine">Kulinaria\MainBundle\Entity</argument>
+                        <argument key="D:\XAMPP\htdocs\Kulinaria\src\Kulinaria\UserBundle\Resources\config\Doctrine">Kulinaria\UserBundle\Entity</argument>
+                      </argument>
+                      <call method="setGlobalBasename">
+                        <argument>mapping</argument>
+                      </call>
+                    </service>
+                  </argument>
+                  <argument>Kulinaria\UserBundle\Entity</argument>
                 </call>
               </service>
             </argument>
@@ -2826,6 +2843,10 @@
       <call method="addPath">
         <argument>D:\XAMPP\htdocs\Kulinaria\src\Kulinaria\MainBundle/Resources/views</argument>
         <argument>KulinariaMain</argument>
+      </call>
+      <call method="addPath">
+        <argument>D:\XAMPP\htdocs\Kulinaria\src\Kulinaria\UserBundle/Resources/views</argument>
+        <argument>KulinariaUser</argument>
       </call>
       <call method="addPath">
         <argument>D:\XAMPP\htdocs\Kulinaria\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle/Resources/views</argument>

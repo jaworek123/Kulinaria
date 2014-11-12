@@ -2,8 +2,6 @@
 
 namespace Kulinaria\MainBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Recipt
  */

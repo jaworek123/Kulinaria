@@ -1,3 +1,7 @@
+kulinaria_user:
+    resource: "@KulinariaUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
 kulinaria_main:
     resource: "@KulinariaMainBundle/Resources/config/routing.yml"
     prefix:   /

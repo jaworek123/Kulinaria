@@ -1,0 +1,6 @@
+user_login:
+    path:     /login/
+    defaults: { _controller: KulinariaUserBundle:Login:index }
+registration:
+    path:   /registration/
+    defaults: { _controller: KulinariaUserBundle:Registration:register }

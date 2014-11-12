@@ -122,13 +122,31 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // kulinaria_main_homepage
-        if (rtrim($pathinfo, '/') === '') {
+        // user_login
+        if (rtrim($pathinfo, '/') === '/login') {
             if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'kulinaria_main_homepage');
+                return $this->redirect($pathinfo.'/', 'user_login');
             }
 
-            return array (  '_controller' => 'Kulinaria\\MainBundle\\Controller\\MainController::indexAction',  '_route' => 'kulinaria_main_homepage',);
+            return array (  '_controller' => 'Kulinaria\\UserBundle\\Controller\\LoginController::indexAction',  '_route' => 'user_login',);
+        }
+
+        // registration
+        if (rtrim($pathinfo, '/') === '/registration') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'registration');
+            }
+
+            return array (  '_controller' => 'Kulinaria\\UserBundle\\Controller\\RegistrationController::registerAction',  '_route' => 'registration',);
+        }
+
+        // homepage
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'homepage');
+            }
+
+            return array (  '_controller' => 'Kulinaria\\MainBundle\\Controller\\MainController::indexAction',  '_route' => 'homepage',);
         }
 
         // cook_book

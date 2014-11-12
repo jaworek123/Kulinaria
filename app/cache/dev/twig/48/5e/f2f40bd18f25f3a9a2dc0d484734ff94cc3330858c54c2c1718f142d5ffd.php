@@ -152,7 +152,7 @@ class __TwigTemplate_485ef2f40bd18f25f3a9a2dc0d484734ff94cc3330858c54c2c1718f142
         $context['_seq'] = twig_ensure_traversable(range(((isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")) - 2), ((isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")) + 2)));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-            if (((isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")) > 2)) {
+            if ((((isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")) > 2) && ((isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")) < ((isset($context["maxPage"]) ? $context["maxPage"] : $this->getContext($context, "maxPage")) - 1)))) {
                 // line 120
                 echo "                        ";
                 if (($context["i"] == (isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")))) {
@@ -186,49 +186,97 @@ class __TwigTemplate_485ef2f40bd18f25f3a9a2dc0d484734ff94cc3330858c54c2c1718f142
         if (!$context['_iterated']) {
             // line 130
             echo "                        ";
-            $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable(range(1, 5));
-            foreach ($context['_seq'] as $context["_key"] => $context["j"]) {
+            if (((isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")) < 3)) {
                 // line 131
                 echo "                            ";
-                if (($context["j"] == (isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")))) {
+                $context['_parent'] = (array) $context;
+                $context['_seq'] = twig_ensure_traversable(range(1, 5));
+                foreach ($context['_seq'] as $context["_key"] => $context["j"]) {
                     // line 132
-                    echo "                                <li class=\"active\">
-                                   <a href=\"";
-                    // line 133
-                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cook_book", array("page" => $context["j"])), "html", null, true);
-                    echo "\">";
-                    echo twig_escape_filter($this->env, $context["j"], "html", null, true);
-                    echo "</a>
-                                </li>
-                            ";
-                } else {
-                    // line 136
-                    echo "                                <li>
-                                    <a href=\"";
-                    // line 137
-                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cook_book", array("page" => $context["j"])), "html", null, true);
-                    echo "\">";
-                    echo twig_escape_filter($this->env, $context["j"], "html", null, true);
-                    echo "</a>
-                                </li>
-                            ";
+                    echo "                                ";
+                    if (($context["j"] == (isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")))) {
+                        // line 133
+                        echo "                                    <li class=\"active\">
+                                       <a href=\"";
+                        // line 134
+                        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cook_book", array("page" => $context["j"])), "html", null, true);
+                        echo "\">";
+                        echo twig_escape_filter($this->env, $context["j"], "html", null, true);
+                        echo "</a>
+                                    </li>
+                                ";
+                    } else {
+                        // line 137
+                        echo "                                    <li>
+                                        <a href=\"";
+                        // line 138
+                        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cook_book", array("page" => $context["j"])), "html", null, true);
+                        echo "\">";
+                        echo twig_escape_filter($this->env, $context["j"], "html", null, true);
+                        echo "</a>
+                                    </li>
+                                ";
+                    }
+                    // line 141
+                    echo "                            ";
                 }
-                // line 140
+                $_parent = $context['_parent'];
+                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['j'], $context['_parent'], $context['loop']);
+                $context = array_intersect_key($context, $_parent) + $_parent;
+                // line 142
+                echo "                        ";
+            } else {
+                // line 143
+                echo "                            ";
+                $context['_parent'] = (array) $context;
+                $context['_seq'] = twig_ensure_traversable(range(((isset($context["maxPage"]) ? $context["maxPage"] : $this->getContext($context, "maxPage")) - 4), (isset($context["maxPage"]) ? $context["maxPage"] : $this->getContext($context, "maxPage"))));
+                foreach ($context['_seq'] as $context["_key"] => $context["k"]) {
+                    // line 144
+                    echo "                                ";
+                    if (($context["k"] == (isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")))) {
+                        // line 145
+                        echo "                                    <li class=\"active\">
+                                       <a href=\"";
+                        // line 146
+                        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cook_book", array("page" => $context["k"])), "html", null, true);
+                        echo "\">";
+                        echo twig_escape_filter($this->env, $context["k"], "html", null, true);
+                        echo "</a>
+                                    </li>
+                                ";
+                    } else {
+                        // line 149
+                        echo "                                    <li>
+                                        <a href=\"";
+                        // line 150
+                        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cook_book", array("page" => $context["k"])), "html", null, true);
+                        echo "\">";
+                        echo twig_escape_filter($this->env, $context["k"], "html", null, true);
+                        echo "</a>
+                                    </li>
+                                ";
+                    }
+                    // line 153
+                    echo "                            ";
+                }
+                $_parent = $context['_parent'];
+                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['k'], $context['_parent'], $context['loop']);
+                $context = array_intersect_key($context, $_parent) + $_parent;
+                // line 154
                 echo "                        ";
             }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['j'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 141
+            // line 155
             echo "                    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 142
+        // line 156
         echo "                    <li>
-                        <a href=\"#\">&raquo;</a>
+                        <a href=\" ";
+        // line 157
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cook_book", array("page" => (isset($context["maxPage"]) ? $context["maxPage"] : $this->getContext($context, "maxPage")))), "html", null, true);
+        echo " \">&raquo;</a>
                     </li>
                 </ul>
             </div>
@@ -260,6 +308,6 @@ class __TwigTemplate_485ef2f40bd18f25f3a9a2dc0d484734ff94cc3330858c54c2c1718f142
 
     public function getDebugInfo()
     {
-        return array (  230 => 142,  224 => 141,  218 => 140,  210 => 137,  207 => 136,  199 => 133,  196 => 132,  193 => 131,  188 => 130,  182 => 129,  174 => 126,  171 => 125,  163 => 122,  160 => 121,  157 => 120,  151 => 119,  146 => 117,  31 => 4,  28 => 3,);
+        return array (  278 => 157,  275 => 156,  269 => 155,  266 => 154,  260 => 153,  252 => 150,  249 => 149,  241 => 146,  238 => 145,  235 => 144,  230 => 143,  227 => 142,  221 => 141,  213 => 138,  210 => 137,  202 => 134,  199 => 133,  196 => 132,  191 => 131,  188 => 130,  182 => 129,  174 => 126,  171 => 125,  163 => 122,  160 => 121,  157 => 120,  151 => 119,  146 => 117,  31 => 4,  28 => 3,);
     }
 }

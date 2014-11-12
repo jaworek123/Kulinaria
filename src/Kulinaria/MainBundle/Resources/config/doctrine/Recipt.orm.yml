@@ -21,8 +21,8 @@ Kulinaria\MainBundle\Entity\Recipt:
     lifecycleCallbacks: {  }
     manyToOne:
         user:
-            targetEntity: User
-            ieversedBy: recipts
+            targetEntity: Kulinaria\UserBundle\Entity\User
+            inversedBy: recipts
             joinColumn:
                 name: user_id
                 referencedColumnName: id

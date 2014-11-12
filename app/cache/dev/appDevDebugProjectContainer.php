@@ -629,14 +629,15 @@ class appDevDebugProjectContainer extends Container
         $c = new \Doctrine\Common\Cache\ArrayCache();
         $c->setNamespace('sf2orm_default_035957afec481f45e685a0cfadec904e7e29c3ca407beb7381f89411202e8119');
 
-        $d = new \Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver(array('D:\\XAMPP\\htdocs\\Kulinaria\\src\\Kulinaria\\MainBundle\\Resources\\config\\doctrine' => 'Kulinaria\\MainBundle\\Entity'));
+        $d = new \Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver(array('D:\\XAMPP\\htdocs\\Kulinaria\\src\\Kulinaria\\MainBundle\\Resources\\config\\doctrine' => 'Kulinaria\\MainBundle\\Entity', 'D:\\XAMPP\\htdocs\\Kulinaria\\src\\Kulinaria\\UserBundle\\Resources\\config\\Doctrine' => 'Kulinaria\\UserBundle\\Entity'));
         $d->setGlobalBasename('mapping');
 
         $e = new \Doctrine\ORM\Mapping\Driver\DriverChain();
         $e->addDriver($d, 'Kulinaria\\MainBundle\\Entity');
+        $e->addDriver($d, 'Kulinaria\\UserBundle\\Entity');
 
         $f = new \Doctrine\ORM\Configuration();
-        $f->setEntityNamespaces(array('KulinariaMainBundle' => 'Kulinaria\\MainBundle\\Entity'));
+        $f->setEntityNamespaces(array('KulinariaMainBundle' => 'Kulinaria\\MainBundle\\Entity', 'KulinariaUserBundle' => 'Kulinaria\\UserBundle\\Entity'));
         $f->setMetadataCacheImpl($a);
         $f->setQueryCacheImpl($b);
         $f->setResultCacheImpl($c);
@@ -3040,6 +3041,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addPath('D:\\XAMPP\\htdocs\\Kulinaria\\vendor\\symfony\\swiftmailer-bundle\\Symfony\\Bundle\\SwiftmailerBundle/Resources/views', 'Swiftmailer');
         $instance->addPath('D:\\XAMPP\\htdocs\\Kulinaria\\vendor\\doctrine\\doctrine-bundle\\Doctrine\\Bundle\\DoctrineBundle/Resources/views', 'Doctrine');
         $instance->addPath('D:\\XAMPP\\htdocs\\Kulinaria\\src\\Kulinaria\\MainBundle/Resources/views', 'KulinariaMain');
+        $instance->addPath('D:\\XAMPP\\htdocs\\Kulinaria\\src\\Kulinaria\\UserBundle/Resources/views', 'KulinariaUser');
         $instance->addPath('D:\\XAMPP\\htdocs\\Kulinaria\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\WebProfilerBundle/Resources/views', 'WebProfiler');
         $instance->addPath('D:\\XAMPP\\htdocs\\Kulinaria\\vendor\\sensio\\distribution-bundle\\Sensio\\Bundle\\DistributionBundle/Resources/views', 'SensioDistribution');
         $instance->addPath('D:/XAMPP/htdocs/Kulinaria/app/Resources/views');
@@ -3510,6 +3512,7 @@ class appDevDebugProjectContainer extends Container
                 'DoctrineBundle' => 'Doctrine\\Bundle\\DoctrineBundle\\DoctrineBundle',
                 'SensioFrameworkExtraBundle' => 'Sensio\\Bundle\\FrameworkExtraBundle\\SensioFrameworkExtraBundle',
                 'KulinariaMainBundle' => 'Kulinaria\\MainBundle\\KulinariaMainBundle',
+                'KulinariaUserBundle' => 'Kulinaria\\UserBundle\\KulinariaUserBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
                 'SensioDistributionBundle' => 'Sensio\\Bundle\\DistributionBundle\\SensioDistributionBundle',
                 'SensioGeneratorBundle' => 'Sensio\\Bundle\\GeneratorBundle\\SensioGeneratorBundle',

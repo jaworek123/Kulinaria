@@ -42,7 +42,7 @@ class __TwigTemplate_993af58df3aecdd9360bfe2eefa1627622eec32bfdfa267ea3997425333
                 </button>
                 <a class=\"navbar-brand\" href=\" ";
         // line 15
-        echo $this->env->getExtension('routing')->getPath("kulinaria_main_homepage");
+        echo $this->env->getExtension('routing')->getPath("homepage");
         echo " \">Strona glowna</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -101,7 +101,10 @@ class __TwigTemplate_993af58df3aecdd9360bfe2eefa1627622eec32bfdfa267ea3997425333
                         </ul>
                     </li>
                     <li>
-                        <a href=\"logout.html\">Zaloguj</a>
+                        <a href=\" ";
+        // line 67
+        echo $this->env->getExtension('routing')->getPath("user_login");
+        echo " \">Zaloguj</a>
                     </li>
                 </ul>
             </div>
@@ -161,7 +164,6 @@ class __TwigTemplate_993af58df3aecdd9360bfe2eefa1627622eec32bfdfa267ea3997425333
     // line 116
     public function block_content($context, array $blocks = array())
     {
-        echo " ";
     }
 
     public function getTemplateName()
@@ -176,6 +178,6 @@ class __TwigTemplate_993af58df3aecdd9360bfe2eefa1627622eec32bfdfa267ea3997425333
 
     public function getDebugInfo()
     {
-        return array (  162 => 116,  157 => 117,  155 => 116,  60 => 24,  54 => 21,  45 => 15,  32 => 4,  29 => 3,);
+        return array (  165 => 116,  160 => 117,  158 => 116,  106 => 67,  60 => 24,  54 => 21,  45 => 15,  32 => 4,  29 => 3,);
     }
 }
