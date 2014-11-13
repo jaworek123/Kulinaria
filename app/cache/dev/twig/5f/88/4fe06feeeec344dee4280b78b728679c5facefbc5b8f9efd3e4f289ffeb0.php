@@ -24,6 +24,7 @@ class __TwigTemplate_5f884fe06feeeec344dee4280b78b728679c5facefbc5b8f9efd3e4f289
     {
         // line 2
         echo "    <div class=\"form_row\">
+        :)
     </div>
 ";
     }
