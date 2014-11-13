@@ -24,10 +24,6 @@ class __TwigTemplate_5f884fe06feeeec344dee4280b78b728679c5facefbc5b8f9efd3e4f289
     {
         // line 2
         echo "    <div class=\"form_row\">
-        ";
-        // line 3
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form');
-        echo "
     </div>
 ";
     }
@@ -39,6 +35,6 @@ class __TwigTemplate_5f884fe06feeeec344dee4280b78b728679c5facefbc5b8f9efd3e4f289
 
     public function getDebugInfo()
     {
-        return array (  29 => 3,  26 => 2,  20 => 1,);
+        return array (  26 => 2,  20 => 1,);
     }
 }

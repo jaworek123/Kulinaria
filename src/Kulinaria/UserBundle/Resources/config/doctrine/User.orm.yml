@@ -1,0 +1,22 @@
+Kulinaria\UserBundle\Entity\User:
+    type: entity
+    table: null
+    repositoryClass: Kulinaria\UserBundle\Entity\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        surname:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
+    oneToMany:
+        recipts:
+            targetEntity: Kulinaria\MainBundle\Entity\Recipt
+            mappedBy: user
