@@ -4,7 +4,7 @@
     <parameter key="kernel.root_dir">D:/XAMPP/htdocs/Kulinaria/app</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.name">app</parameter>
+    <parameter key="kernel.name">ap_</parameter>
     <parameter key="kernel.cache_dir">D:/XAMPP/htdocs/Kulinaria/app/cache/dev</parameter>
     <parameter key="kernel.logs_dir">D:/XAMPP/htdocs/Kulinaria/app/logs</parameter>
     <parameter key="kernel.bundles" type="collection">
@@ -2360,10 +2360,7 @@
       <argument type="service">
         <service class="Doctrine\ORM\Configuration" public="false">
           <call method="setEntityNamespaces">
-            <argument type="collection">
-              <argument key="KulinariaMainBundle">Kulinaria\MainBundle\Entity</argument>
-              <argument key="KulinariaUserBundle">Kulinaria\UserBundle\Entity</argument>
-            </argument>
+            <argument type="collection"/>
           </call>
           <call method="setMetadataCacheImpl">
             <argument type="service">
@@ -2394,36 +2391,7 @@
           </call>
           <call method="setMetadataDriverImpl">
             <argument type="service">
-              <service class="Doctrine\ORM\Mapping\Driver\DriverChain" public="false">
-                <call method="addDriver">
-                  <argument type="service">
-                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
-                      <argument type="collection">
-                        <argument key="D:\XAMPP\htdocs\Kulinaria\src\Kulinaria\MainBundle\Resources\config\doctrine">Kulinaria\MainBundle\Entity</argument>
-                        <argument key="D:\XAMPP\htdocs\Kulinaria\src\Kulinaria\UserBundle\Resources\config\Doctrine">Kulinaria\UserBundle\Entity</argument>
-                      </argument>
-                      <call method="setGlobalBasename">
-                        <argument>mapping</argument>
-                      </call>
-                    </service>
-                  </argument>
-                  <argument>Kulinaria\MainBundle\Entity</argument>
-                </call>
-                <call method="addDriver">
-                  <argument type="service">
-                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
-                      <argument type="collection">
-                        <argument key="D:\XAMPP\htdocs\Kulinaria\src\Kulinaria\MainBundle\Resources\config\doctrine">Kulinaria\MainBundle\Entity</argument>
-                        <argument key="D:\XAMPP\htdocs\Kulinaria\src\Kulinaria\UserBundle\Resources\config\Doctrine">Kulinaria\UserBundle\Entity</argument>
-                      </argument>
-                      <call method="setGlobalBasename">
-                        <argument>mapping</argument>
-                      </call>
-                    </service>
-                  </argument>
-                  <argument>Kulinaria\UserBundle\Entity</argument>
-                </call>
-              </service>
+              <service class="Doctrine\ORM\Mapping\Driver\DriverChain" public="false"/>
             </argument>
           </call>
           <call method="setProxyDir">

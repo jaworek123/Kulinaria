@@ -629,27 +629,20 @@ class appDevDebugProjectContainer extends Container
         $c = new \Doctrine\Common\Cache\ArrayCache();
         $c->setNamespace('sf2orm_default_035957afec481f45e685a0cfadec904e7e29c3ca407beb7381f89411202e8119');
 
-        $d = new \Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver(array('D:\\XAMPP\\htdocs\\Kulinaria\\src\\Kulinaria\\MainBundle\\Resources\\config\\doctrine' => 'Kulinaria\\MainBundle\\Entity', 'D:\\XAMPP\\htdocs\\Kulinaria\\src\\Kulinaria\\UserBundle\\Resources\\config\\Doctrine' => 'Kulinaria\\UserBundle\\Entity'));
-        $d->setGlobalBasename('mapping');
+        $d = new \Doctrine\ORM\Configuration();
+        $d->setEntityNamespaces(array());
+        $d->setMetadataCacheImpl($a);
+        $d->setQueryCacheImpl($b);
+        $d->setResultCacheImpl($c);
+        $d->setMetadataDriverImpl(new \Doctrine\ORM\Mapping\Driver\DriverChain());
+        $d->setProxyDir('D:/XAMPP/htdocs/Kulinaria/app/cache/dev/doctrine/orm/Proxies');
+        $d->setProxyNamespace('Proxies');
+        $d->setAutoGenerateProxyClasses(true);
+        $d->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
+        $d->setDefaultRepositoryClassName('Doctrine\\ORM\\EntityRepository');
+        $d->setNamingStrategy(new \Doctrine\ORM\Mapping\DefaultNamingStrategy());
 
-        $e = new \Doctrine\ORM\Mapping\Driver\DriverChain();
-        $e->addDriver($d, 'Kulinaria\\MainBundle\\Entity');
-        $e->addDriver($d, 'Kulinaria\\UserBundle\\Entity');
-
-        $f = new \Doctrine\ORM\Configuration();
-        $f->setEntityNamespaces(array('KulinariaMainBundle' => 'Kulinaria\\MainBundle\\Entity', 'KulinariaUserBundle' => 'Kulinaria\\UserBundle\\Entity'));
-        $f->setMetadataCacheImpl($a);
-        $f->setQueryCacheImpl($b);
-        $f->setResultCacheImpl($c);
-        $f->setMetadataDriverImpl($e);
-        $f->setProxyDir('D:/XAMPP/htdocs/Kulinaria/app/cache/dev/doctrine/orm/Proxies');
-        $f->setProxyNamespace('Proxies');
-        $f->setAutoGenerateProxyClasses(true);
-        $f->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
-        $f->setDefaultRepositoryClassName('Doctrine\\ORM\\EntityRepository');
-        $f->setNamingStrategy(new \Doctrine\ORM\Mapping\DefaultNamingStrategy());
-
-        $this->services['doctrine.orm.default_entity_manager'] = $instance = \Doctrine\ORM\EntityManager::create($this->get('doctrine.dbal.default_connection'), $f);
+        $this->services['doctrine.orm.default_entity_manager'] = $instance = \Doctrine\ORM\EntityManager::create($this->get('doctrine.dbal.default_connection'), $d);
 
         $this->get('doctrine.orm.default_manager_configurator')->configure($instance);
 
@@ -3499,7 +3492,7 @@ class appDevDebugProjectContainer extends Container
             'kernel.root_dir' => 'D:/XAMPP/htdocs/Kulinaria/app',
             'kernel.environment' => 'dev',
             'kernel.debug' => true,
-            'kernel.name' => 'app',
+            'kernel.name' => 'ap_',
             'kernel.cache_dir' => 'D:/XAMPP/htdocs/Kulinaria/app/cache/dev',
             'kernel.logs_dir' => 'D:/XAMPP/htdocs/Kulinaria/app/logs',
             'kernel.bundles' => array(
