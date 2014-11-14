@@ -2,12 +2,8 @@
 
 namespace Kulinaria\UserBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
+use FOS\UserBundle\Controller\RegistrationController as BaseController;
 
-class RegistrationController extends Controller {
+class RegistrationController extends BaseController {
     
-    public function registerAction(Request $request) {
-        
-    }
 }

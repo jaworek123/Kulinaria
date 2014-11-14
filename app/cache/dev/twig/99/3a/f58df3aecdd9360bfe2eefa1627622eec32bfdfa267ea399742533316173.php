@@ -55,10 +55,7 @@ class __TwigTemplate_993af58df3aecdd9360bfe2eefa1627622eec32bfdfa267ea3997425333
         echo " \">Ksiazka kucharska</a>
                     </li>
                     <li>
-                        <a href=\" ";
-        // line 24
-        echo $this->env->getExtension('routing')->getPath("find_recipt");
-        echo " \">Wyszukaj</a>
+                        <a href=\"\">Wyszukaj</a>
                     </li>
                     <li>
                         <a href=\"contact.html\">Kontakt</a>
@@ -101,10 +98,7 @@ class __TwigTemplate_993af58df3aecdd9360bfe2eefa1627622eec32bfdfa267ea3997425333
                         </ul>
                     </li>
                     <li>
-                        <a href=\" ";
-        // line 67
-        echo $this->env->getExtension('routing')->getPath("user_login");
-        echo " \">Zaloguj</a>
+                        <a href=\"\">Zarejestruj sie</a>
                     </li>
                 </ul>
             </div>
@@ -178,6 +172,6 @@ class __TwigTemplate_993af58df3aecdd9360bfe2eefa1627622eec32bfdfa267ea3997425333
 
     public function getDebugInfo()
     {
-        return array (  165 => 116,  160 => 117,  158 => 116,  106 => 67,  60 => 24,  54 => 21,  45 => 15,  32 => 4,  29 => 3,);
+        return array (  159 => 116,  154 => 117,  152 => 116,  54 => 21,  45 => 15,  32 => 4,  29 => 3,);
     }
 }

@@ -4,7 +4,7 @@
     <parameter key="kernel.root_dir">D:/XAMPP/htdocs/Kulinaria/app</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.name">ap_</parameter>
+    <parameter key="kernel.name">app</parameter>
     <parameter key="kernel.cache_dir">D:/XAMPP/htdocs/Kulinaria/app/cache/dev</parameter>
     <parameter key="kernel.logs_dir">D:/XAMPP/htdocs/Kulinaria/app/logs</parameter>
     <parameter key="kernel.bundles" type="collection">
@@ -538,7 +538,7 @@
       <parameter key="webmaster@example.com">webmaster</parameter>
     </parameter>
     <parameter key="fos_user.registration.confirmation.enabled">false</parameter>
-    <parameter key="fos_user.registration.form.type">fos_user_registration</parameter>
+    <parameter key="fos_user.registration.form.type">kulinaria_user_registration</parameter>
     <parameter key="fos_user.registration.form.name">fos_user_registration_form</parameter>
     <parameter key="fos_user.registration.form.validation_groups" type="collection">
       <parameter>Registration</parameter>
@@ -2280,6 +2280,7 @@
               <argument key="fos_user_registration">fos_user.registration.form.type</argument>
               <argument key="fos_user_change_password">fos_user.change_password.form.type</argument>
               <argument key="fos_user_resetting">fos_user.resetting.form.type</argument>
+              <argument key="kulinaria_user_registration">kulinaria_user.registration.form.type</argument>
             </argument>
             <argument type="collection">
               <argument key="form" type="collection">
@@ -2816,7 +2817,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5464d63f24d42</argument>
+            <argument>54660655ddd7d</argument>
           </service>
         </argument>
       </argument>
@@ -3086,7 +3087,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>5464d63f24d42</argument>
+            <argument>54660655ddd7d</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>
@@ -3734,7 +3735,7 @@
     </service>
     <service id="fos_user.registration.form" class="Symfony\Component\Form\Form" factory-method="createNamed" factory-service="form.factory">
       <argument>fos_user_registration_form</argument>
-      <argument>fos_user_registration</argument>
+      <argument>kulinaria_user_registration</argument>
       <argument>null</argument>
       <argument type="collection">
         <argument key="validation_groups" type="collection">
@@ -3779,6 +3780,10 @@
     </service>
     <service id="fos_user.resetting.form.type" class="FOS\UserBundle\Form\Type\ResettingFormType">
       <tag name="form.type" alias="fos_user_resetting"/>
+    </service>
+    <service id="kulinaria_user.registration.form.type" class="Kulinaria\UserBundle\Form\Type\RegistrationFormType">
+      <tag name="form.type" alias="kulinaria_user_registration"/>
+      <argument>Kulinaria\UserBundle\Entity\User</argument>
     </service>
     <service id="web_profiler.controller.profiler" class="Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController">
       <argument type="service" id="router" on-invalid="null"/>
