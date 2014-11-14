@@ -57,9 +57,6 @@ class __TwigTemplate_993af58df3aecdd9360bfe2eefa1627622eec32bfdfa267ea3997425333
                     <li>
                         <a href=\"\">Wyszukaj</a>
                     </li>
-                    <li>
-                        <a href=\"contact.html\">Kontakt</a>
-                    </li>
                     <li class=\"dropdown\">
                         <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Portfolio <b class=\"caret\"></b></a>
                         <ul class=\"dropdown-menu\">
@@ -80,25 +77,50 @@ class __TwigTemplate_993af58df3aecdd9360bfe2eefa1627622eec32bfdfa267ea3997425333
                             </li>
                         </ul>
                     </li>
-                    <li class=\"dropdown\">
-                        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Ustawienia <b class=\"caret\"></b></a>
-                        <ul class=\"dropdown-menu\">
-                            <li>
-                                <a href=\"full-width.html\">Konto</a>
-                            </li>
-                            <li>
-                                <a href=\"sidebar.html\">Twoje przepisy</a>
-                            </li>
-                            <li>
-                                <a href=\"404.html\">Pomoc</a>
-                            </li>
-                            <li>
-                                <a href=\"pricing.html\">Wyloguj</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href=\"\">Zarejestruj sie</a>
+                    ";
+        // line 46
+        if ((!twig_test_empty($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())))) {
+            // line 47
+            echo "                        <li class=\"dropdown\">
+                            <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Ustawienia <b class=\"caret\"></b></a>
+                            <ul class=\"dropdown-menu\">
+                                <li>
+                                    <a href=\"";
+            // line 51
+            echo $this->env->getExtension('routing')->getPath("fos_user_profile_edit");
+            echo "\">Konto</a>
+                                </li>
+                                <li>
+                                    <a href=\"sidebar.html\">Twoje przepisy</a>
+                                </li>
+                                <li>
+                                    <a href=\"404.html\">Pomoc</a>
+                                </li>
+                                <li>
+                                    <a href=\"";
+            // line 60
+            echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
+            echo "\">Wyloguj</a>
+                                </li>
+                            </ul>
+                        </li>
+                    ";
+        } else {
+            // line 65
+            echo "                        <li>
+                            <a href=\"";
+            // line 66
+            echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
+            echo "\">Zaloguj</a>
+                        </li>
+                    ";
+        }
+        // line 69
+        echo "                    <li>
+                        <a href=\"";
+        // line 70
+        echo $this->env->getExtension('routing')->getPath("fos_user_registration_register");
+        echo "\">Zarejestruj sie</a>
                     </li>
                 </ul>
             </div>
@@ -148,14 +170,14 @@ class __TwigTemplate_993af58df3aecdd9360bfe2eefa1627622eec32bfdfa267ea3997425333
     </header>
     <div id =\"myBody\">
         ";
-        // line 116
+        // line 119
         $this->displayBlock('content', $context, $blocks);
-        // line 117
+        // line 120
         echo "    </div>
 ";
     }
 
-    // line 116
+    // line 119
     public function block_content($context, array $blocks = array())
     {
     }
@@ -172,6 +194,6 @@ class __TwigTemplate_993af58df3aecdd9360bfe2eefa1627622eec32bfdfa267ea3997425333
 
     public function getDebugInfo()
     {
-        return array (  159 => 116,  154 => 117,  152 => 116,  54 => 21,  45 => 15,  32 => 4,  29 => 3,);
+        return array (  181 => 119,  176 => 120,  174 => 119,  122 => 70,  119 => 69,  113 => 66,  110 => 65,  102 => 60,  90 => 51,  84 => 47,  82 => 46,  54 => 21,  45 => 15,  32 => 4,  29 => 3,);
     }
 }

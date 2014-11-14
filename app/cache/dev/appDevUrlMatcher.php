@@ -122,25 +122,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // homepage
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'homepage');
-            }
-
-            return array (  '_controller' => 'Kulinaria\\MainBundle\\Controller\\MainController::indexAction',  '_route' => 'homepage',);
-        }
-
-        // cook_book
-        if (0 === strpos($pathinfo, '/cookBook') && preg_match('#^/cookBook(?:/(?P<page>[^/]++))?$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'cook_book')), array (  '_controller' => 'Kulinaria\\MainBundle\\Controller\\CookBookController::indexAction',  'page' => 1,));
-        }
-
-        // find_recipt
-        if ($pathinfo === '/findRecipt') {
-            return array (  '_controller' => 'Kulinaria\\MainBundle\\Controller\\MainController::findReciptAction',  '_route' => 'find_recipt',);
-        }
-
         if (0 === strpos($pathinfo, '/log')) {
             if (0 === strpos($pathinfo, '/login')) {
                 // fos_user_security_login
@@ -302,6 +283,20 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ChangePasswordController::changePasswordAction',  '_route' => 'fos_user_change_password',);
         }
         not_fos_user_change_password:
+
+        // homepage
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'homepage');
+            }
+
+            return array (  '_controller' => 'Kulinaria\\MainBundle\\Controller\\MainController::indexAction',  '_route' => 'homepage',);
+        }
+
+        // cook_book
+        if (0 === strpos($pathinfo, '/cookBook') && preg_match('#^/cookBook(?:/(?P<page>[^/]++))?$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'cook_book')), array (  '_controller' => 'Kulinaria\\MainBundle\\Controller\\CookBookController::indexAction',  'page' => 1,));
+        }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }

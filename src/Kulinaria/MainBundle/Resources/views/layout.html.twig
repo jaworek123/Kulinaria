@@ -23,9 +23,6 @@
                     <li>
                         <a href="">Wyszukaj</a>
                     </li>
-                    <li>
-                        <a href="contact.html">Kontakt</a>
-                    </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -46,25 +43,31 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ustawienia <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="full-width.html">Konto</a>
-                            </li>
-                            <li>
-                                <a href="sidebar.html">Twoje przepisy</a>
-                            </li>
-                            <li>
-                                <a href="404.html">Pomoc</a>
-                            </li>
-                            <li>
-                                <a href="pricing.html">Wyloguj</a>
-                            </li>
-                        </ul>
-                    </li>
+                    {% if app.user is not empty %}
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ustawienia <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{ path('fos_user_profile_edit') }}">Konto</a>
+                                </li>
+                                <li>
+                                    <a href="sidebar.html">Twoje przepisy</a>
+                                </li>
+                                <li>
+                                    <a href="404.html">Pomoc</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('fos_user_security_logout') }}">Wyloguj</a>
+                                </li>
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li>
+                            <a href="{{ path('fos_user_security_login') }}">Zaloguj</a>
+                        </li>
+                    {% endif %}
                     <li>
-                        <a href="">Zarejestruj sie</a>
+                        <a href="{{ path('fos_user_registration_register') }}">Zarejestruj sie</a>
                     </li>
                 </ul>
             </div>

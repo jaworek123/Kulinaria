@@ -5,7 +5,3 @@ homepage:
 cook_book:
     path: /cookBook/{page}
     defaults: { _controller: KulinariaMainBundle:CookBook:index, page: 1 }
-
-find_recipt:
-    path: /findRecipt
-    defaults: { _controller: KulinariaMainBundle:Main:findRecipt }

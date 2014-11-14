@@ -2,4 +2,7 @@
 
 {% block content %}
     Strona glowna projektu.
+    {% if app.user is not empty %}
+        {{ app.user.username }}
+    {% endif %}
 {% endblock %}
