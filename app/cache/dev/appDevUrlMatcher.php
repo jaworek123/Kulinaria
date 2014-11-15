@@ -293,9 +293,14 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Kulinaria\\MainBundle\\Controller\\MainController::indexAction',  '_route' => 'homepage',);
         }
 
-        // cook_book
-        if (0 === strpos($pathinfo, '/cookBook') && preg_match('#^/cookBook(?:/(?P<page>[^/]++))?$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'cook_book')), array (  '_controller' => 'Kulinaria\\MainBundle\\Controller\\CookBookController::indexAction',  'page' => 1,));
+        // add_recipt
+        if ($pathinfo === '/addRecipt') {
+            return array (  '_controller' => 'Kulinaria\\MainBundle\\Controller\\ReciptController::addReciptAction',  '_route' => 'add_recipt',);
+        }
+
+        // show_recipts
+        if (0 === strpos($pathinfo, '/showRecipts') && preg_match('#^/showRecipts(?:/(?P<page>[^/]++))?$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'show_recipts')), array (  '_controller' => 'Kulinaria\\MainBundle\\Controller\\ReciptController::showReciptsAction',  'page' => 1,));
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

@@ -1,0 +1,10 @@
+{% extends 'KulinariaMainBundle::layout.html.twig' %}
+
+{% block content %}
+    <form action ="{{ path('add_recipt') }}" method="POST" class="kulinaria_add_recipt">
+        {{ form_widget(form) }}
+        <div>
+            <input type="submit" value="Dodaj" />
+        </div>
+    </form>
+{% endblock %}

@@ -2,6 +2,10 @@ homepage:
     path:     /
     defaults: { _controller: KulinariaMainBundle:Main:index }
 
-cook_book:
-    path: /cookBook/{page}
-    defaults: { _controller: KulinariaMainBundle:CookBook:index, page: 1 }
+add_recipt:
+    path:     /addRecipt
+    defaults: { _controller: KulinariaMainBundle:Recipt:addRecipt }
+
+show_recipts:
+    path:     /showRecipts/{page}
+    defaults: { _controller: KulinariaMainBundle:Recipt:showRecipts, page:1 }

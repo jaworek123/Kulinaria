@@ -51,7 +51,7 @@ class __TwigTemplate_993af58df3aecdd9360bfe2eefa1627622eec32bfdfa267ea3997425333
                     <li>
                         <a href=\" ";
         // line 21
-        echo $this->env->getExtension('routing')->getPath("cook_book");
+        echo $this->env->getExtension('routing')->getPath("show_recipts");
         echo " \">Ksiazka kucharska</a>
                     </li>
                     <li>
@@ -104,25 +104,31 @@ class __TwigTemplate_993af58df3aecdd9360bfe2eefa1627622eec32bfdfa267ea3997425333
                                 </li>
                             </ul>
                         </li>
+                        <li>
+                            <a href=\"";
+            // line 65
+            echo $this->env->getExtension('routing')->getPath("add_recipt");
+            echo "\">Dodaj przepis</a>
+                        </li>
                     ";
         } else {
-            // line 65
+            // line 68
             echo "                        <li>
                             <a href=\"";
-            // line 66
+            // line 69
             echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
             echo "\">Zaloguj</a>
+                            <li>
+                                <a href=\"";
+            // line 71
+            echo $this->env->getExtension('routing')->getPath("fos_user_registration_register");
+            echo "\">Zarejestruj sie</a>
+                            </li>
                         </li>
                     ";
         }
-        // line 69
-        echo "                    <li>
-                        <a href=\"";
-        // line 70
-        echo $this->env->getExtension('routing')->getPath("fos_user_registration_register");
-        echo "\">Zarejestruj sie</a>
-                    </li>
-                </ul>
+        // line 75
+        echo "                </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -170,14 +176,14 @@ class __TwigTemplate_993af58df3aecdd9360bfe2eefa1627622eec32bfdfa267ea3997425333
     </header>
     <div id =\"myBody\">
         ";
-        // line 119
+        // line 122
         $this->displayBlock('content', $context, $blocks);
-        // line 120
+        // line 123
         echo "    </div>
 ";
     }
 
-    // line 119
+    // line 122
     public function block_content($context, array $blocks = array())
     {
     }
@@ -194,6 +200,6 @@ class __TwigTemplate_993af58df3aecdd9360bfe2eefa1627622eec32bfdfa267ea3997425333
 
     public function getDebugInfo()
     {
-        return array (  181 => 119,  176 => 120,  174 => 119,  122 => 70,  119 => 69,  113 => 66,  110 => 65,  102 => 60,  90 => 51,  84 => 47,  82 => 46,  54 => 21,  45 => 15,  32 => 4,  29 => 3,);
+        return array (  187 => 122,  182 => 123,  180 => 122,  131 => 75,  124 => 71,  119 => 69,  116 => 68,  110 => 65,  102 => 60,  90 => 51,  84 => 47,  82 => 46,  54 => 21,  45 => 15,  32 => 4,  29 => 3,);
     }
 }

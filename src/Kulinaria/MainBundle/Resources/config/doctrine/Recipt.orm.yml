@@ -16,6 +16,8 @@ Kulinaria\MainBundle\Entity\Recipt:
             type: text
         image:
             type: blob
+        date:
+            type: datetime
     lifecycleCallbacks: {  }
     manyToOne:
         user:

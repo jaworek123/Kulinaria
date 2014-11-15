@@ -2,7 +2,6 @@
 
 namespace Kulinaria\MainBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Recipt
@@ -28,6 +27,11 @@ class Recipt
      * @var string
      */
     private $image;
+    
+    /**
+     * @var \DateTime
+     */
+    private $date;
 
     /**
      *
@@ -114,6 +118,29 @@ class Recipt
         return $this->image;
     }
 
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     * @return Fas
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime 
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+    
     /**
      * Set user
      *
