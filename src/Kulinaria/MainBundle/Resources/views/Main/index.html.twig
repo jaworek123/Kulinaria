@@ -1,7 +1,7 @@
 {% extends 'KulinariaMainBundle::layout.html.twig' %}
 
 {% block content %}
-    Strona glowna projektu.
+    Strona glowna projektu.<br />
     {% if app.user is not empty %}
         {{ app.user.username }}
     {% endif %}

@@ -2,7 +2,6 @@
 
 namespace Kulinaria\MainBundle\Entity;
 
-
 /**
  * Recipt
  */

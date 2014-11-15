@@ -28,7 +28,7 @@ class __TwigTemplate_6fdb9542993adfffdffb6beced3acc6da87bfe16ddc2f1f904360178458
     public function block_content($context, array $blocks = array())
     {
         // line 4
-        echo "    Strona glowna projektu.
+        echo "    Strona glowna projektu.<br />
     ";
         // line 5
         if ((!twig_test_empty($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())))) {

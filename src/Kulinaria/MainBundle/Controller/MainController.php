@@ -10,4 +10,8 @@ class MainController extends Controller
     {
         return $this->render('KulinariaMainBundle:Main:index.html.twig');
     }
+    
+    public function notLoggedInAction() {
+        return $this->render('KulinariaMainBundle:Main:notLoggedIn.html.twig');
+    }
 }

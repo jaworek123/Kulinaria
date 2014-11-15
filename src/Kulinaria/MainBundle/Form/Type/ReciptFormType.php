@@ -1,12 +1,12 @@
 <?php
 
-namespace Kulinaria\MainBundle\Form;
+namespace Kulinaria\MainBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class ReciptType extends AbstractType
+class ReciptFormType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder

@@ -51,7 +51,7 @@ class __TwigTemplate_ee973678b0675662bfa3432a660a3b92771c305c68a2b342094ae183f43
         // line 24
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 38
+        // line 41
         echo "    </body>
 </html>
 ";
@@ -101,6 +101,12 @@ class __TwigTemplate_ee973678b0675662bfa3432a660a3b92771c305c68a2b342094ae183f43
         // line 29
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/KulinariaMainBundle/js/bootstrap.min.js"), "html", null, true);
         echo " \"></script>
+            
+            <!-- MY SCRIPTS -->
+            <script src=\" ";
+        // line 32
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/KulinariaMainBundle/js/myscripts.js"), "html", null, true);
+        echo " \"></script>
 
             <!-- Script to Activate the Carousel -->
             <script>
@@ -123,6 +129,6 @@ class __TwigTemplate_ee973678b0675662bfa3432a660a3b92771c305c68a2b342094ae183f43
 
     public function getDebugInfo()
     {
-        return array (  102 => 29,  96 => 26,  93 => 25,  90 => 24,  85 => 23,  79 => 17,  73 => 14,  70 => 13,  67 => 12,  61 => 10,  55 => 38,  52 => 24,  50 => 23,  44 => 20,  41 => 19,  39 => 12,  34 => 10,  23 => 1,);
+        return array (  108 => 32,  102 => 29,  96 => 26,  93 => 25,  90 => 24,  85 => 23,  79 => 17,  73 => 14,  70 => 13,  67 => 12,  61 => 10,  55 => 41,  52 => 24,  50 => 23,  44 => 20,  41 => 19,  39 => 12,  34 => 10,  23 => 1,);
     }
 }

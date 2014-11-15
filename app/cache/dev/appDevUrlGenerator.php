@@ -45,6 +45,7 @@ class appDevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
         'homepage' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Kulinaria\\MainBundle\\Controller\\MainController::indexAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'add_recipt' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Kulinaria\\MainBundle\\Controller\\ReciptController::addReciptAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/addRecipt',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'show_recipts' => array (  0 =>   array (    0 => 'page',  ),  1 =>   array (    '_controller' => 'Kulinaria\\MainBundle\\Controller\\ReciptController::showReciptsAction',    'page' => 1,  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'variable',      1 => '/',      2 => '[^/]++',      3 => 'page',    ),    1 =>     array (      0 => 'text',      1 => '/showRecipts',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'not_logged_in' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'Kulinaria\\MainBundle\\Controller\\MainController::notLoggedInAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
     );
 
     /**

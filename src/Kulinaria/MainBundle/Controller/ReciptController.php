@@ -6,20 +6,24 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-use Kulinaria\MainBundle\Form\ReciptType;
+use Kulinaria\MainBundle\Form\Type\ReciptFormType;
 
 
 class ReciptController extends Controller
 {
     public function addReciptAction(Request $request)
     {
-        $form = $this->createForm(new ReciptType());
-        
-        $form->handleRequest($request);
-        if($form->isValid()) {
-            return $this->redirect($this->generateUrl('homepage'));
+        if($this->getUser() != null) {
+            $form = $this->createForm(new ReciptFormType());
+
+            $form->handleRequest($request);
+            if($form->isValid()) {
+                return $this->redirect($this->generateUrl('homepage'));
+            } else {
+                return $this->render('KulinariaMainBundle:Recipt:addRecipt.html.twig', array('form' => $form->createView()));
+            }
         } else {
-            return $this->render('KulinariaMainBundle:Main:addrecipt.html.twig', array('form' => $form->createView()));
+            return $this->redirect($this->generateUrl('not_logged_in'));
         }
     }
 

@@ -303,6 +303,15 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'show_recipts')), array (  '_controller' => 'Kulinaria\\MainBundle\\Controller\\ReciptController::showReciptsAction',  'page' => 1,));
         }
 
+        // not_logged_in
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'not_logged_in');
+            }
+
+            return array (  '_controller' => 'Kulinaria\\MainBundle\\Controller\\MainController::notLoggedInAction',  '_route' => 'not_logged_in',);
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }
